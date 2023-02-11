@@ -9,14 +9,18 @@ from django.urls import reverse
 
 
 def user_login(request):
+    # Rendering  login page
     return render(request, 'authentication/login.html')
 
 
 def user_logout(request):
+    # Rendering  logout page
     return render(request, 'authentication/logout.html')
 
 
 def authenticate_user(request):
+    # Authenticating user
+    # Then rendering index page if they are successful
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
@@ -32,6 +36,8 @@ def authenticate_user(request):
 
 
 def register_user(request):
+    # registering user
+    # Showing message when successful
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
