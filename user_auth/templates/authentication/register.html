@@ -1,0 +1,35 @@
+{% extends "fin_skater_profile/home_page.html" %}
+{% load crispy_forms_tags %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Register</title>{% endblock %}
+<!-- Title End -->
+
+<!-- Middle content Start -->
+{% block middle_content %}
+
+{% load admin_modify %}
+
+<dv>
+    <!-- Register section start -->
+    <form method="POST">
+         {% csrf_token %}
+        <dv><br>
+        <legend>Register to book an appointment with our financial advisors</legend>
+        {{ form|crispy  }}
+        </dv><br><br>
+        <dv>
+            <button type="submit">Sign Up</button>
+        </dv>
+    </form><br>
+    <!-- Register section end -->
+
+    <!-- Login link Start -->
+    <dv>
+        <small>Already have an account? <a href="{% url 'user_auth:login' %}">Login</a></small>
+    </dv>
+    <!-- Login link End -->
+</dv>
+
+{% endblock %}
+<!-- Middle content End -->

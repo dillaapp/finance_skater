@@ -1,0 +1,69 @@
+{% extends "fin_skater_profile/home_page.html" %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Bookings</title>{% endblock %}
+<!-- Title End -->
+
+
+<!-- Left side Ads Start -->
+{% block left_side_content %}
+<div class="well">
+  <p>ADS</p>
+</div>
+
+<div class="well">
+  <p>ADS</p>
+</div>
+{% endblock %}
+<!-- Left side Ads End -->
+
+
+<!-- Middle content Start -->
+{% block middle_content %}
+
+<!-- Booking info list start here -->
+<br><br>
+<h3>Bookings: </h3> <hr>
+
+{% if booking_list %}
+
+      {% for booking in booking_list %}
+
+         {% if booking.email == user.email %}
+
+          <ul>
+              <p>Your financial advisor name: <strong>{{ booking.fin_advisor_username }}</strong> </a></p>
+              <p>Date and time: <strong>{{ booking.day_and_time }}</strong></p>
+              <p>Where: <strong>{{ booking.location }}</strong></p>
+              <p>You want to talk about: <strong>{{ booking.topic }}</strong></p>
+              <p>Date of booking: <strong>{{ booking.booking_date }}</strong></p>
+          </ul><hr>
+         {% else %}
+
+         {% endif %}
+
+     {% endfor %}
+
+{% else %}
+<p>You have not booked any appointment yet</p>
+{% endif %}
+<hr>
+<!-- Booking info list ends  here -->
+
+<a href="{% url 'financial_advisors:financial_advisors' %}">View all financial advisors</a></p>
+
+{% endblock %}
+<!-- Middle content End -->
+
+
+<!-- Right side Ads Start -->
+{% block right_side_content %}
+<div class="well">
+  <p>ADS</p>
+</div>
+
+<div class="well">
+  <p>ADS</p>
+</div>
+{% endblock %}
+<!-- Right side Ads End -->

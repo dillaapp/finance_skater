@@ -1,0 +1,45 @@
+{% extends "fin_skater_profile/home_page.html" %}
+{% load crispy_forms_tags %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Book an advisor </title>{% endblock %}
+<!-- Title End -->
+
+<!-- Middle content Start -->
+{% block middle_content %}
+<br><br>
+<h3> You are making a booking to talk to financial advisor: {{ financial_advisor.fin_advisor_name }}</h3><hr>
+
+<!-- Booking form  Start -->
+<form action="{% url 'financial_advisors:book_appointment' %}" method="post">
+    {% csrf_token %}
+    <label>Financial Advisors' username: </label>
+    <input type="text" id="fin_advisor_username" name="fin_advisor_username" placeholder="Financial advisor's username" value="{{ financial_advisor.fin_advisor_username }}"  style="width: 200px;" required>
+    <br>
+
+    <label>First Name: </label>
+    <input  type="text" id="first_name" name="first_name" placeholder="Your first name" value="{{ user.first_name }}" style="width: 200px;" required>
+    <br>
+
+     <label>Email: </label>
+    <input  type="text" id="email" name="email" placeholder="Your email" value="{{ user.email }}"  style="width: 200px;" required>
+    <br>
+
+    <label>Date and Time: </label>
+    <input  type="text" id="day_and_time" name="day_and_time" placeholder="Give us three preferred dates and times." required>
+    <br>
+
+    <label>Location: </label>
+    <input  type="text" id="location" name="location" placeholder="Let us know if you want to come to our office or you want to do it online." required>
+    <br>
+
+    <label>Topic: </label>
+    <input  type="text" id="topic" name="topic" placeholder="What areas do you want your financial advisors to cover for you?"  required>
+    <br>
+
+     <input type="submit" value="Book an Appointment" />
+
+</form>
+<!-- Booking form  End -->
+{% endblock %}
+<!-- Middle content End -->

@@ -1,0 +1,18 @@
+{% extends "fin_skater_profile/home_page.html" %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Logout</title>{% endblock %}
+<!-- Title End -->
+
+<!-- Middle content Start -->
+{% block middle_content %}
+<!-- Logout section start -->
+<h2>You have been logged out</h2>
+<dv>
+    <small>
+        <a href="{% url 'user_auth:login' %}">Log in again</a>
+    </small>
+</dv>
+<!-- Logout section end -->
+{% endblock %}
+<!-- Middle content End -->

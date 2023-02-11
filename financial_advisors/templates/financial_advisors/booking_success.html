@@ -1,0 +1,17 @@
+{% extends "fin_skater_profile/home_page.html" %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Booking success </title>{% endblock %}
+<!-- Title End -->
+
+<!-- Middle content Start -->
+{% block middle_content %}
+<br><br>
+<h3>Bookings status: </h3> <hr>
+<p>Your booking is successful</p>
+<hr>
+
+<a href="{% url 'financial_advisors:booking_info' %}">View you booking</a></p>
+
+{% endblock %}
+<!-- Middle content End -->
