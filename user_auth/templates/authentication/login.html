@@ -1,0 +1,44 @@
+{% extends "fin_skater_profile/home_page.html" %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Login</title>{% endblock %}
+<!-- Title End -->
+
+<!-- Middle content Start -->
+{% block middle_content %}
+
+<!--  Error message start -->
+{% if messages %}
+   {% for message in messages %}
+      <dv>
+          {{ message }}
+      </dv>
+   {% endfor %}
+{% endif %}
+<!--  Error message end -->
+
+<h1> Login to Book! </h1>
+
+<!-- Login section start -->
+<form action="{% url 'user_auth:authenticate_user' %}" method="post">
+    {% csrf_token %}
+    <label>Username</label>
+    <input  type="text" id="username" name="username" placeholder="user" style="width: 200px;" required>
+    <br><br>
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="password" style="width: 200px" required>
+    <br><br>
+
+    <input type="submit" value="Login" />
+</form><br>
+<!-- Login section end -->
+
+<!-- Register link start -->
+<dv>
+    <small>Do you want to create a new account? <a href="{% url 'user_auth:register_user' %}">Register</a></small>
+</dv>
+<!-- Register link start -->
+
+{% endblock %}
+<!-- Middle content End -->

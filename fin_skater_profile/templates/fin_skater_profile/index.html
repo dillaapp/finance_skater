@@ -1,0 +1,52 @@
+{% extends "fin_skater_profile/home_page.html" %}
+{% load static %}
+
+<!-- Title Start -->
+{% block title %}
+{% if user.is_authenticated %}
+<title>{{ user.first_name }} | financeSkater | Homepage</title>
+{% else %}
+<title>financeSkater | Homepage</title>
+{% endif %}
+{% endblock %}
+<!-- Title End -->
+
+<!-- Left side Ads Start -->
+{% block left_side_content %}
+<div class="well">
+  <p>ADS</p>
+</div>
+
+<div class="well">
+  <p>ADS</p>
+</div>
+{% endblock %}
+<!-- Left side Ads End -->
+
+
+<!-- Middle content Start -->
+{% block middle_content %}
+<br><br>
+<h3>Navigate your career, finance & business goals, with confidence.</h3><br>
+<h5>Join a community of thousands of South African professionals and entrepreneurs.</h5>
+<hr>
+<div>
+<p>Design a life strategy to achieve the things you want in life.
+Planning is invaluable. Start now and make the most important investment you will ever make – the investment in yourself. </p>
+<img alt="logo" src="{% static 'home_page\photos\financeSkater_logo.png' %}" style="width:500px; height: 500px">
+</div>
+{% endblock %}
+<!-- Middle content End -->
+
+
+<!-- Right side Ads Start -->
+{% block right_side_content %}
+<div class="well">
+  <p>ADS</p>
+</div>
+
+<div class="well">
+  <p>ADS</p>
+</div>
+{% endblock %}
+<!-- Right side Ads End -->

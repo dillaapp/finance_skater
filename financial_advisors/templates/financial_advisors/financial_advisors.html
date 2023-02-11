@@ -1,0 +1,67 @@
+{% extends "fin_skater_profile/home_page.html" %}
+
+<!-- Title Start -->
+{% block title %} <title>financeSkater | Financial advisors</title>{% endblock %}
+<!-- Title End -->
+
+<!-- Title End -->
+
+
+<!-- Left side Ads Start -->
+{% block left_side_content %}
+<div class="well">
+  <p>ADS</p>
+</div>
+
+<div class="well">
+  <p>ADS</p>
+</div>
+{% endblock %}
+<!-- Left side Ads End -->
+
+
+<!-- Middle content Start -->
+{% block middle_content %}
+<br><br>
+<h1>Personal finance advisors</h1>
+<p>All financeSkater's financial advisors are vetted and hold all the necessary certificates.</p>
+<hr>
+<h3>Select one of our top advisors</h3>
+
+<!-- List of financial advisors to book on Starts -->
+<div class="row">
+    {% if financial_advisors_list %}
+    {% for fin_advisor in financial_advisors_list %}
+    <div class="column">
+        <div class="card">
+            <div class="Text_in_cont">
+                <h2><a href="{% url 'financial_advisors:book_an_advisor' fin_advisor.id %}">
+                    {{ fin_advisor.fin_advisor_name }}</a> </h2><hr>
+                <p class="title">@{{ fin_advisor.fin_advisor_username }}</p>
+                <p>{{ fin_advisor.bio_statement }}</p>
+                <a href="{% url 'financial_advisors:book_an_advisor' fin_advisor.id %}"><button class="button">Book</button></a><hr>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% else %}
+    <p>No financial advisors are available</p>
+    {% endif %}
+</div>
+<!-- List of financial advisors to book on End -->
+{% endblock %}
+<!-- Middle content End -->
+
+
+<!-- Right side Ads Start -->
+{% block right_side_content %}
+<div class="well">
+  <p>ADS</p>
+</div>
+
+<div class="well">
+  <p>ADS</p>
+</div>
+{% endblock %}
+<!-- Right side Ads End -->

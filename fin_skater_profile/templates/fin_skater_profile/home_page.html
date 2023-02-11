@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+
+  {% block title %} {% endblock %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="{% static 'home_page\styles.css' %}">
+  <link rel="stylesheet" href="{% static 'contact_us\styles.css' %}">
+  <link rel="stylesheet" href="{% static 'fin_advisors\styles.css' %}">
+
+</head>
+<body style="background-color: #f1f1f1;">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!--- Text logo start -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'fin_skater_profile:index' %}">financeSkater</a>
+    </div>
+    <!--- Text logo End -->
+
+    <!--- Nav options start -->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'fin_skater_profile:index' %}">Home</a></li>
+        <li><a href="{% url 'fin_skater_profile:about_us' %}">About</a></li>
+        <li><a href="{% url 'financial_advisors:financial_advisors' %}">Advisors</a></li>
+        <li><a href="{% url 'financial_advisors:booking_info' %}">Bookings</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+        <li><a href="#"><span class="glyphicon"></span>Welcome,  {{ user.first_name }}</a></li>
+        <li><a href="{% url 'user_auth:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'user_auth:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="{% url 'user_auth:register_user' %}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <!--- Nav options End -->
+  </div>
+</nav>
+
+<!-- Body content start -->
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+
+      {% block left_side_content %} {% endblock %}
+
+    </div>
+
+    <div class="col-sm-8 text-left" style="background-color: #ffffff; height: 767px">
+
+      {% block middle_content %} {% endblock %}
+
+    </div>
+
+    <div class="col-sm-2 sidenav">
+
+      {% block right_side_content %} {% endblock %}
+
+    </div>
+  </div>
+</div>
+<!-- Body content End -->
+
+</body>
+</html>
