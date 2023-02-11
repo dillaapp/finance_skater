@@ -24,7 +24,7 @@ After you coloned the project and installed all the packages in the requirements
 
 Here are some screenhots to help you visually:
 - cmd commands 
-![cmd commands](https://github.com/dillaapp/finance_skater/blob/master/How%20to_cmd.png0
+![cmd commands](https://github.com/dillaapp/finance_skater/blob/master/How%20to_cmd.png)
 - Homepage 
 ![Homepage](https://github.com/dillaapp/finance_skater/blob/master/Homepage.png)
 
