@@ -20,7 +20,7 @@ After you coloned the project and installed all the packages in the requirements
 - Open cmd and cd the the coloned project directory 
 - once you are there input this "workon 'Your Vertual environment name'" then enter
 - Then run "Python mange.py runserver"
-- Then copy the the url " http://127.0.0.1:8000/" and paste into your browser to use it
+- Then copy the the url " http://127.0.0.1:8000/" and paste it into your browser to use it
 
 Here are some screenhots to help you visually:
 - cmd commands 
