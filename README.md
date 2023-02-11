@@ -12,8 +12,8 @@ financeSkater project. It is personal finance learning platform where users can 
 - Bootstap
 
 # Installtion 
-After cloning the project please pip install -r requirements.txt in your virtual environment
-requirements.txt, has all the neccessary installion you have to make for the project to run correctly
+- After cloning the project please pip install -r requirements.txt into your virtual environment.
+- requirements.txt, has all the neccessary installion you have to make for the project to run correctly
 
 # How to USe the program
 After you coloned the project and installed all the packages in the requirements.txt into your vertual environment 
