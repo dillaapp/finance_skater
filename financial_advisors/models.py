@@ -5,6 +5,10 @@ from django.db import models
 
 # Create your models here.
 class FinAdvisors(models.Model):
+    """
+    Creating a table called FinAdvisors, with columns iD, fin_advisor_name, fin_advisor_username, bio_statement,
+    pub_date
+    """
     id = models.AutoField(primary_key=True)
     fin_advisor_name = models.CharField(max_length=200)
     fin_advisor_username = models.CharField(max_length=200)
@@ -16,6 +20,10 @@ class FinAdvisors(models.Model):
 
 
 class Booking(models.Model):
+    """
+        Creating a table called FinAdvisors, with columns iD, fin_advisor_username, first_name, email, day_and_time, location,
+        booking_date
+        """
     id = models.AutoField(primary_key=True)
     fin_advisor_username = models.TextField(max_length=150)
     first_name = models.TextField(max_length=150)

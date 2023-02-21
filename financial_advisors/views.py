@@ -30,6 +30,17 @@ def booking_info(request):
 
 @login_required
 def book_appointment(request):
+    """
+    book_appointment, capture the following
+     -fin_advisor_username
+     -first_name
+     -email
+     -day_and_time
+     -location
+     -topic
+     and save
+    :return: save to database and render booking success.html page
+    """
     if request.method == "POST":
         fin_advisor_username = request.POST['fin_advisor_username']
         first_name = request.POST['first_name']
