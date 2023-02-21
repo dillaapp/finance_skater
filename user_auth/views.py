@@ -17,6 +17,10 @@ def user_logout(request):
 
 
 def authenticate_user(request):
+    """
+    authenticate_user, method authenticates user using username and password
+    :return: renders index page when successful
+    """
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
@@ -32,6 +36,10 @@ def authenticate_user(request):
 
 
 def register_user(request):
+    """
+    Register_user , method to register user
+    :return: after successful registration render login.html page and massage that the user is registered
+    """
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
