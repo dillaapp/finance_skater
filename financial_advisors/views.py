@@ -38,6 +38,7 @@ def book_appointment(request):
      -day_and_time
      -location
      -topic
+
      and save
     :return: save to database and render booking success.html page
     """
