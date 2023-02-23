@@ -2,7 +2,7 @@
 finance_skater
 
 # Description
-financeSkater project. It is personal finance learning platform where users can learn about all things finance and book an appointment with an advisor when they seek help.
+financeSkater project. It is a personal finance learning platform where users can learn about all things finance and book an appointment with an advisor when they seek help.
 
 # Tech Stack
 - Python
